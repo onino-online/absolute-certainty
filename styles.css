@@ -1,0 +1,220 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Chilanka";
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.poem {
+  max-width: 90rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  /* background-color: #222; */
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 0 20px #afd33fff, 0 0 30px #afd33fff, 0 0 40px #afd33fff,
+    0 0 50px #afd33fff; /* Glow effect */
+  border-radius: 0.5rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #afd33fff, 0 0 20px #afd33fff, 0 0 30px #afd33fff;
+}
+
+h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.stanza {
+  margin-bottom: 2rem;
+}
+
+.stanza p {
+  margin: 0 0 5rem;
+  text-indent: 2rem;
+  font-size: 2.5rem;
+}
+
+/* p {
+  margin-bottom: 5rem;
+} */
+
+.stanza p:last-child {
+  margin-bottom: 0;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: #000;
+}
+
+.popup-content p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.popup-content button {
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+}
+
+.popup-content button:hover {
+  background-color: #666;
+}
+
+.italic {
+  font-style: italic;
+  color: #afd33fff;
+  /* letter-spacing: 0.1rem; */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .poem {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .stanza p {
+    font-size: 1.2rem;
+    text-indent: 1rem;
+  }
+
+  .popup-content p {
+    font-size: 1.5rem;
+  }
+
+  .popup-content button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  margin-top: 10rem;
+}
+
+@font-face {
+  font-family: "Chilanka";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/chilanka/v20/WWXRlj2DZQiMJYaYRoJPKdAwZg.woff2)
+    format("woff2");
+  unicode-range: U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA,
+    U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Chilanka";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/chilanka/v20/WWXRlj2DZQiMJYaYRoJZKdAwZg.woff2)
+    format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Chilanka";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/chilanka/v20/WWXRlj2DZQiMJYaYRoJXKdA.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0rem;
+    margin: 0rem;
+  }
+  .poem {
+    margin: 10px 0;
+  }
+  .title {
+    font-size: 1.5em;
+  }
+  .poem-title {
+    font-size: 1.2em;
+  }
+  .verse {
+    font-size: 1em;
+  }
+  .stanza p {
+    font-size: 1rem;
+  }
+}
+
+/* Barre de défilement */
+::-webkit-scrollbar {
+  width: 1rem; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+  background: #222; /* Couleur de la piste */
+  box-shadow: inset 0 0 5px #000; /* Ombre interne pour l'effet de profondeur */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #afd33fff; /* Couleur du pouce (la partie déplaçable) */
+  border-radius: 0.5rem; /* Arrondir les coins du pouce */
+  box-shadow: 0 0 10px #afd33fff; /* Glow effect */
+  border: 2px solid #222; /* Bordure pour l'effet de glow */
+}
+
+/* Pour les navigateurs non-Webkit (Mozilla Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #afd33fff #222;
+}
+
+/* Glow effect for non-Webkit browsers */
+@supports (scrollbar-color: #afd33fff #222) {
+  * {
+    scrollbar-shadow: 0 0 10px #afd33fff;
+  }
+}
