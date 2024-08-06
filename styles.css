@@ -1,125 +1,137 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: "Dancing Script", cursive;
+  font-family: "Chilanka";
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background: #f8f0f8;
-  color: #333;
-}
-.title {
-  text-align: center;
-  font-size: 2em;
-  margin: 20px 0;
-  color: #b03a2e;
-  font-size: 6em;
-  font-weight: 700;
-}
-.poem {
-  width: 100%;
-  margin: 0 0 20px 0;
-  border-radius: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-.poem-title {
-  font-family: "Dancing Script", cursive;
-  background: #6a1b9a;
+  background-color: #000;
   color: #fff;
-  font-size: 2em;
-  padding: 10px;
-  cursor: pointer;
-  text-align: center;
-  margin: 0;
-}
-.poem-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background: #fff;
-  /* padding: 20px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.verse {
-  text-align: center;
-  font-size: 2em;
-  margin: 0.5em 0;
-  color: #4a4a4a;
-  font-weight: 900;
 }
 
-footer {
+.poem {
+  max-width: 90rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  /* background-color: #222; */
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 0 20px #afd33fff, 0 0 30px #afd33fff, 0 0 40px #afd33fff,
+    0 0 50px #afd33fff; /* Glow effect */
+  border-radius: 0.5rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #afd33fff, 0 0 20px #afd33fff, 0 0 30px #afd33fff;
+}
+
+h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.stanza {
+  margin-bottom: 2rem;
+}
+
+.stanza p {
+  margin: 0 0 5rem;
+  text-indent: 2rem;
+  font-size: 2.5rem;
+}
+
+/* p {
+  margin-bottom: 5rem;
+} */
+
+.stanza p:last-child {
+  margin-bottom: 0;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 3em 0em;
-  text-align: center;
-  background-color: black;
-  color: white;
-  font-size: 2em;
-  font-family: "Chilanka";
-  line-height: 3em;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  text-align: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
-  font-size: em;
+  align-items: center;
+  z-index: 1000;
 }
 
-.heal {
-  height: 10px;
+.popup-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: #000;
 }
 
-.container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  filter: drop-shadow(6px -2px 8px #ff0357);
+.popup-content p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
-.heart {
-  position: relative;
-  height: 200px;
-  width: 130px;
-  background-color: rgb(230, 30, 96);
-  transform: rotate(45deg);
-  border-radius: 200px 200px 0px 0px;
-  animation: pump 3s infinite ease-in-out;
+
+.popup-content button {
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
 }
-.heart::before {
-  content: " ";
-  position: absolute;
-  top: 35px;
-  left: -40px;
-  height: 200px;
-  width: 130px;
-  background-color: rgb(230, 30, 96);
-  transform: rotate(270deg);
-  border-radius: 200px 200px 0px 0px;
-  animation: pump 3s infinite ease-in-out;
+
+.popup-content button:hover {
+  background-color: #666;
 }
-@keyframes pump {
-  0% {
-    height: 200px;
-    width: 130px;
+
+.italic {
+  font-style: italic;
+  color: #afd33fff;
+  /* letter-spacing: 0.1rem; */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
   }
-  30% {
-    height: 190px;
-    width: 120px;
+
+  .poem {
+    padding: 1rem;
   }
-  60% {
-    height: 180px;
-    width: 110px;
-    border-radius: 100px 100px 0px 0px;
+
+  h1 {
+    font-size: 2.5rem;
   }
-  90% {
-    height: 200px;
-    width: 130px;
+
+  .stanza p {
+    font-size: 1.2rem;
+    text-indent: 1rem;
   }
+
+  .popup-content p {
+    font-size: 1.5rem;
+  }
+
+  .popup-content button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  margin-top: 10rem;
 }
 
 @font-face {
@@ -156,6 +168,10 @@ footer {
     U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @media (max-width: 600px) {
+  body {
+    padding: 0rem;
+    margin: 0rem;
+  }
   .poem {
     margin: 10px 0;
   }
@@ -167,5 +183,38 @@ footer {
   }
   .verse {
     font-size: 1em;
+  }
+  .stanza p {
+    font-size: 1rem;
+  }
+}
+
+/* Barre de défilement */
+::-webkit-scrollbar {
+  width: 1rem; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+  background: #222; /* Couleur de la piste */
+  box-shadow: inset 0 0 5px #000; /* Ombre interne pour l'effet de profondeur */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #afd33fff; /* Couleur du pouce (la partie déplaçable) */
+  border-radius: 0.5rem; /* Arrondir les coins du pouce */
+  box-shadow: 0 0 10px #afd33fff; /* Glow effect */
+  border: 2px solid #222; /* Bordure pour l'effet de glow */
+}
+
+/* Pour les navigateurs non-Webkit (Mozilla Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #afd33fff #222;
+}
+
+/* Glow effect for non-Webkit browsers */
+@supports (scrollbar-color: #afd33fff #222) {
+  * {
+    scrollbar-shadow: 0 0 10px #afd33fff;
   }
 }
