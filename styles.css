@@ -26,7 +26,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.1; /* Ajuste cette valeur pour régler l’opacité */
+  opacity: 0.2; /* Ajuste cette valeur pour régler l’opacité */
   z-index: -1; /* Place l’image derrière le contenu */
 }
 
@@ -215,5 +215,5 @@ img {
 }
 
 .hidden {
-  display: none; /* Masque complètement l'élément */
+  display: none !important; /* Masque complètement l'élément */
 }

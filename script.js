@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Crée un observer pour les éléments italics
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
           // Marque les paragraphes précédents pour fade-out
           fadeOutPrevious(entry.target);
@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
       threshold: 0.5, // Détecte lorsque 50% de l'élément est visible
     }
   );
+
+  function removePoeme() {
+    const poemeElement = document.getElementById("poem");
+    if (poemeElement) {
+      poemeElement.remove(); // Retire complètement l'élément du DOM
+    }
+  }
 
   // Fonction pour appliquer le fade-out aux paragraphes précédents
   function fadeOutPrevious(currentElement) {
@@ -81,10 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
               );
             }
           );
-        }, 13000);
+        }, 16000);
       }
     }
-    document.querySelector(".poeme").classList.add("active");
   }
 
   italicElements.forEach((element) => {
