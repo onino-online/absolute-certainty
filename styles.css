@@ -12,13 +12,27 @@ body {
   padding: 0;
   background-color: #000;
   color: #fff;
+  position: relative;
+}
+
+.poem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("GOT.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1; /* Ajuste cette valeur pour régler l’opacité */
+  z-index: -1; /* Place l’image derrière le contenu */
 }
 
 .poem {
   max-width: 90rem;
   margin: 0 auto;
-  margin-top: 5rem;
-  /* background-color: #222; */
   padding: 2rem;
   box-shadow: 0 0 1rem rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
@@ -101,34 +115,6 @@ h1 {
   /* letter-spacing: 0.1rem; */
 }
 
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  .poem {
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  .stanza p {
-    font-size: 1.2rem;
-    text-indent: 1rem;
-  }
-
-  .popup-content p {
-    font-size: 1.5rem;
-  }
-
-  .popup-content button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1.2rem;
-  }
-}
-
 img {
   max-width: 100%;
   margin-top: 10rem;
@@ -173,7 +159,6 @@ img {
     margin: 0rem;
   }
   .poem {
-    margin: 10px 0;
   }
   .title {
     font-size: 1.5em;
@@ -217,4 +202,14 @@ img {
   * {
     scrollbar-shadow: 0 0 10px #afd33fff;
   }
+}
+
+/*effet */
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease; /* Transition d'opacité pour un effet de fondu */
+}
+
+.hidden {
+  display: none; /* Masque complètement l'élément */
 }

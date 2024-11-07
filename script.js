@@ -22,3 +22,74 @@ function playMusic() {
   let audio = document.getElementById("background-music");
   audio.play();
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const italicElements = document.querySelectorAll(".poem .italic");
+  const allParagraphs = document.querySelectorAll(".poem p");
+
+  // Crée un observer pour les éléments italics
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Marque les paragraphes précédents pour fade-out
+          fadeOutPrevious(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Détecte lorsque 50% de l'élément est visible
+    }
+  );
+
+  // Fonction pour appliquer le fade-out aux paragraphes précédents
+  function fadeOutPrevious(currentElement) {
+    let index = Array.from(allParagraphs).indexOf(currentElement);
+    for (let i = 0; i < index; i++) {
+      let paragraph = allParagraphs[i];
+      if (
+        !paragraph.classList.contains("italic") &&
+        !paragraph.classList.contains("hidden")
+      ) {
+        paragraph.classList.add("fade-out");
+
+        // Une fois la transition terminée, ajoute "hidden" pour masquer complètement
+        paragraph.addEventListener(
+          "transitionend",
+          function () {
+            paragraph.classList.add("hidden");
+          },
+          { once: true } // Écoute une seule fois pour éviter les appels multiples
+        );
+      }
+    }
+  }
+  function fadeOutPrevious(currentElement) {
+    let index = Array.from(allParagraphs).indexOf(currentElement);
+
+    for (let i = 0; i < index; i++) {
+      if (!allParagraphs[i].classList.contains("italic")) {
+        // Délai de 15 secondes avant d'ajouter la classe "fade-out"
+        setTimeout(() => {
+          allParagraphs[i].classList.add("fade-out");
+
+          // Ajouter l'écouteur pour l'événement de fin de transition
+          allParagraphs[i].addEventListener(
+            "transitionend",
+            function onTransitionEnd() {
+              allParagraphs[i].classList.add("hidden"); // Ajoute la classe "hidden" après la transition
+              allParagraphs[i].removeEventListener(
+                "transitionend",
+                onTransitionEnd
+              ); // Supprime l'écouteur pour éviter plusieurs appels
+            }
+          );
+        }, 13);
+      }
+    }
+  }
+
+  // Observe chaque élément italic
+  italicElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
