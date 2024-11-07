@@ -68,27 +68,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let i = 0; i < index; i++) {
       if (!allParagraphs[i].classList.contains("italic")) {
-        // Délai de 15 secondes avant d'ajouter la classe "fade-out"
         setTimeout(() => {
           allParagraphs[i].classList.add("fade-out");
 
-          // Ajouter l'écouteur pour l'événement de fin de transition
           allParagraphs[i].addEventListener(
             "transitionend",
             function onTransitionEnd() {
-              allParagraphs[i].classList.add("hidden"); // Ajoute la classe "hidden" après la transition
+              allParagraphs[i].classList.add("hidden");
               allParagraphs[i].removeEventListener(
                 "transitionend",
                 onTransitionEnd
-              ); // Supprime l'écouteur pour éviter plusieurs appels
+              );
             }
           );
-        }, 13);
+        }, 13000);
       }
     }
+    document.querySelector(".poeme").classList.add("active");
   }
 
-  // Observe chaque élément italic
   italicElements.forEach((element) => {
     observer.observe(element);
   });

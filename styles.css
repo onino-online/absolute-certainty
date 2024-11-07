@@ -30,6 +30,10 @@ body {
   z-index: -1; /* Place l’image derrière le contenu */
 }
 
+.poeme.active::before {
+  opacity: 1; /* Changement de l'opacité lorsque la classe "active" est ajoutée */
+}
+
 .poem {
   max-width: 90rem;
   margin: 0 auto;
